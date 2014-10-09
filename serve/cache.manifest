@@ -1,8 +1,34 @@
+CACHE MANIFEST
+
+
 CACHE:
+aquire.html
+index.html
 index.less
+simulate.html
+stest.jpg
+test1.jpg
+extern/CSS3DRenderer.js
+extern/coffeescript.js
+extern/convnet.js
+extern/jquery.js
 extern/less-1.7.5.js
 extern/three.min.js
-extern/coffeescript.js
-extern/jquery.js
-lib/sphere.js
+lib/DataStore.coffee
+lib/Extrapolator_Euler.coffee
+lib/Extrapolator_Quaternions.coffee
+lib/NeuralLerner.coffee
 lib/sphere.coffee
+lib/sphere.js
+
+
+NETWORK:
+http://*
+https://*
+*
+
+
+SETTINGS:
+prefer-online
+
+# hash: 1137d4d91d465efc435ed117bd6864a16a7bfa81e8e6f34044225a0e638efe61
