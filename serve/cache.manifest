@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Time: Thu Oct 09 2014 10:50:45 GMT+0200 (CEST)
+# Time: Thu Oct 09 2014 11:06:40 GMT+0200 (CEST)
 
 
 CACHE:
@@ -19,7 +19,7 @@ lib/DataStore.coffee
 lib/Extrapolator_Euler.coffee
 lib/Extrapolator_Quaternions.coffee
 lib/NeuralLerner.coffee
-lib/appcache.coffee
+lib/appcache.js
 lib/sphere.coffee
 lib/sphere.js
 
@@ -33,4 +33,4 @@ https://*
 SETTINGS:
 prefer-online
 
-# hash: 45387918889731140728c379876f0d32f89a04122abb4b91b1c11c0dedcb4388
+# hash: c0f2eff6eb3fe23d9e7f8e462631fd5e495e658e9d16102e6ce799a2c6ad78e2
