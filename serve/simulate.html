@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html manifest="/cache.manifest">
+
+<html lang="en">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<head>
+		<title>photosphere</title>
+		<style>
+			.right{ float: right; }
+		</style>
+		<link rel="stylesheet/less" type="text/css" href="index.less" />
+		<script src="extern/less-1.7.5.js" type="text/javascript"></script>
+
+	</head>
+	<body>
+		<script type="text/javascript" src="extern/three.min.js"></script>
+		<script type="text/javascript" src="extern/coffeescript.js"></script>
+		<script type="text/javascript" src="extern/jquery.js"></script>
+		<script type="text/javascript" src="extern/convnet.js"></script>
+		<script type="text/coffeescript" src="lib/Extrapolator_Quaternions.coffee"></script>
+		<script type="text/coffeescript" src="lib/Extrapolator_Euler.coffee"></script>
+		<script type="text/coffeescript" src="lib/DataStore.coffee"></script>
+		<script type="text/coffeescript">
+			ds = new DataStore(0,yes)
+			ds.setFromJSON()
+			ds.plot()
+			
+			e_ds = new DataStore(50)
+			ex = new Extrapolator_Euler()
+			lastT = ds.store[0].t
+			for event, i in ds.store
+				nextT = ds.store[i+1]?.t
+				ex.onDeviceOrientation(event)
+				for deltaT in [0..nextT - event.t] by 16
+					e_ds.add ex.extrapolateToEulerDeg(deltaT)
+				lastT = event.t
+			e_ds.plot()
+
+			e_ds = new DataStore(100)
+			ex = new Extrapolator_Quaternions()
+			lastT = ds.store[0].t
+			for event, i in ds.store
+				nextT = ds.store[i+1]?.t
+				ex.onDeviceOrientation(event)
+				for deltaT in [0..nextT - event.t] by 16
+					e_ds.add ex.extrapolateToEulerDeg(deltaT)
+				lastT = event.t
+			e_ds.plot()
+			return
+			e_ds = new DataStore(150)
+			ex = new Extrapolator_Quaternions()
+			lastT = ds.store[0].t
+			for event, i in ds.store
+				ex.onDeviceOrientation(event)
+				for deltaT in [lastT - event.t..0] by 16
+					e_ds.add ex.extrapolateToEulerDeg(deltaT)
+				lastT = event.t
+			e_ds.plot()
+		</script>
+	</body>
+</html>

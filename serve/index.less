@@ -1,0 +1,25 @@
+.sphere{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 50%;
+	z-index: -1;
+	&#sphere1{
+		left: 0;
+		overflow: hidden;
+	}
+
+	&#sphere2{
+		right: 0;
+		overflow: hidden;
+	}
+	#hola{
+		background: -moz-radial-gradient(center, ellipse cover, rgba(30,87,153,1) 22%, rgba(30,87,153,0.64) 50%, rgba(30,87,153,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(22%,rgba(30,87,153,1)), color-stop(50%,rgba(30,87,153,0.64)), color-stop(100%,rgba(30,87,153,0))); /* Chrome,Safari4+ */
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(30,87,153,1) 22%,rgba(30,87,153,0.64) 50%,rgba(30,87,153,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-radial-gradient(center, ellipse cover, rgba(30,87,153,1) 22%,rgba(30,87,153,0.64) 50%,rgba(30,87,153,0) 100%); /* Opera 12+ */
+		background: -ms-radial-gradient(center, ellipse cover, rgba(30,87,153,1) 22%,rgba(30,87,153,0.64) 50%,rgba(30,87,153,0) 100%); /* IE10+ */
+		background: radial-gradient(ellipse at center, rgba(30,87,153,1) 22%,rgba(30,87,153,0.64) 50%,rgba(30,87,153,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#001e5799',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+}
